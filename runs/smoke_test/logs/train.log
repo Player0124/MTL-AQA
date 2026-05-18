@@ -1,0 +1,4 @@
+started_at: 2026-05-18T14:43:40
+device: cpu-numpy
+args: {'data_root': 'MTL-AQA_dataset_release/Ready_2_Use', 'split_file': 'MTL-AQA_split_0_data', 'feature_root': None, 'feature_mode': 'annotation', 'epochs': 1, 'batch_size': 128, 'lr': 0.001, 'seed': 0, 'hidden_dim': 128, 'output_dir': 'runs\\smoke_test'}
+epoch=001 train_loss=4593.164086 train_spearman=-0.22225565217574972 train_mse=4521.099150 test_spearman=-0.1974734799564027 test_mse=4365.446187

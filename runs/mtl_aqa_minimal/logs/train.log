@@ -1,0 +1,23 @@
+started_at: 2026-05-18T14:43:48
+device: cpu-numpy
+args: {'data_root': 'MTL-AQA_dataset_release/Ready_2_Use', 'split_file': 'MTL-AQA_split_0_data', 'feature_root': None, 'feature_mode': 'annotation', 'epochs': 20, 'batch_size': 64, 'lr': 0.001, 'seed': 0, 'hidden_dim': 128, 'output_dir': 'runs\\mtl_aqa_minimal'}
+epoch=001 train_loss=4538.282520 train_spearman=-0.1883524086898955 train_mse=4430.236113 test_spearman=-0.1603001457932084 test_mse=4276.943419
+epoch=002 train_loss=4334.351559 train_spearman=-0.1361351032424866 train_mse=4235.550547 test_spearman=-0.10905548787787224 test_mse=4087.447646
+epoch=003 train_loss=4150.859607 train_spearman=-0.10064248258808545 train_mse=4038.530472 test_spearman=-0.07550422476583676 test_mse=3895.581411
+epoch=004 train_loss=3929.981528 train_spearman=-0.07349217334860174 train_mse=3835.448075 test_spearman=-0.04650282428773328 test_mse=3697.867363
+epoch=005 train_loss=3724.313715 train_spearman=-0.05034555939578963 train_mse=3624.746183 test_spearman=-0.02418438844430827 test_mse=3493.025325
+epoch=006 train_loss=3520.709713 train_spearman=-0.03252457435743837 train_mse=3408.383625 test_spearman=-0.005685042923442721 test_mse=3282.488743
+epoch=007 train_loss=3310.015390 train_spearman=-0.011219724404351459 train_mse=3184.038603 test_spearman=0.015017534726631868 test_mse=3064.566183
+epoch=008 train_loss=3082.829574 train_spearman=0.012560322288914644 train_mse=2954.560559 test_spearman=0.03633395566066183 test_mse=2841.414889
+epoch=009 train_loss=2854.098519 train_spearman=0.03549351496231912 train_mse=2720.155463 test_spearman=0.06102890235537264 test_mse=2613.718362
+epoch=010 train_loss=2608.066784 train_spearman=0.06134781034587348 train_mse=2486.437382 test_spearman=0.08787100436451019 test_mse=2386.397772
+epoch=011 train_loss=2380.035405 train_spearman=0.08476191331272726 train_mse=2254.552273 test_spearman=0.11375134124615238 test_mse=2161.434857
+epoch=012 train_loss=2156.336648 train_spearman=0.10937422215428944 train_mse=2025.482928 test_spearman=0.13795728720076625 test_mse=1939.701501
+epoch=013 train_loss=1918.592896 train_spearman=0.13497433703824246 train_mse=1804.939605 test_spearman=0.16283383545381105 test_mse=1726.278942
+epoch=014 train_loss=1708.929303 train_spearman=0.1584915279398442 train_mse=1596.327284 test_spearman=0.18862575925521252 test_mse=1524.647321
+epoch=015 train_loss=1500.453572 train_spearman=0.18651857725192858 train_mse=1401.038433 test_spearman=0.22199610300860723 test_mse=1336.747724
+epoch=016 train_loss=1312.005527 train_spearman=0.21800547147964103 train_mse=1222.566252 test_spearman=0.2562318852928152 test_mse=1165.303125
+epoch=017 train_loss=1149.500540 train_spearman=0.2474937592986469 train_mse=1063.456313 test_spearman=0.28776179071385294 test_mse=1013.426359
+epoch=018 train_loss=1000.480128 train_spearman=0.276403207580892 train_mse=920.069299 test_spearman=0.31838696290174817 test_mse=877.567091
+epoch=019 train_loss=855.532808 train_spearman=0.3064571173687863 train_mse=797.110751 test_spearman=0.3455491530069424 test_mse=762.047297
+epoch=020 train_loss=745.417859 train_spearman=0.33519831450036197 train_mse=693.854579 test_spearman=0.3680757961967368 test_mse=666.235943

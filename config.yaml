@@ -1,0 +1,10 @@
+data_root: MTL-AQA_dataset_release/Ready_2_Use
+split_file: MTL-AQA_split_0_data
+feature_root: null
+feature_mode: annotation
+epochs: 20
+batch_size: 64
+lr: 0.001
+seed: 0
+hidden_dim: 128
+output_dir: runs/mtl_aqa_minimal
