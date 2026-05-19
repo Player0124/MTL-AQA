@@ -1,0 +1,5 @@
+started_at: 2026-05-19T15:23:43
+device: cpu-numpy
+args: {'input_type': 'skeleton', 'data_root': 'MTL-AQA_dataset_release/Ready_2_Use', 'split_file': 'MTL-AQA_split_0_data', 'feature_root': None, 'feature_mode': 'annotation', 'skeleton_root': 'runs\\synthetic_skeleton_smoke', 'skeleton_length': 103, 'skeleton_dims': 3, 'model': 'temporal_mlp', 'epochs': 2, 'batch_size': 128, 'lr': 0.001, 'seed': 0, 'hidden_dim': 128, 'output_dir': 'runs\\skeleton_temporal_mlp_smoke'}
+epoch=001 train_loss=4824.927155 train_spearman=0.09695721017749764 train_mse=4809.414143 test_spearman=0.07861889141295948 test_mse=4651.189384
+epoch=002 train_loss=4789.768515 train_spearman=0.08838454894046867 train_mse=4802.210984 test_spearman=0.06688420952515792 test_mse=4644.157645

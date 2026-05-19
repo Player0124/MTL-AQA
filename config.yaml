@@ -1,7 +1,12 @@
+input_type: video_feature
 data_root: MTL-AQA_dataset_release/Ready_2_Use
 split_file: MTL-AQA_split_0_data
 feature_root: null
 feature_mode: annotation
+skeleton_root: null
+skeleton_length: 103
+skeleton_dims: 3
+model: mlp
 epochs: 20
 batch_size: 64
 lr: 0.001

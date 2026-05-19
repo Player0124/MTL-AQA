@@ -1,6 +1,6 @@
-started_at: 2026-05-18T14:43:48
+started_at: 2026-05-18T14:59:12
 device: cpu-numpy
-args: {'data_root': 'MTL-AQA_dataset_release/Ready_2_Use', 'split_file': 'MTL-AQA_split_0_data', 'feature_root': None, 'feature_mode': 'annotation', 'epochs': 20, 'batch_size': 64, 'lr': 0.001, 'seed': 0, 'hidden_dim': 128, 'output_dir': 'runs\\mtl_aqa_minimal'}
+args: {'data_root': 'MTL-AQA_dataset_release/Ready_2_Use', 'split_file': 'MTL-AQA_split_0_data', 'feature_root': None, 'feature_mode': 'annotation', 'epochs': 20, 'batch_size': 64, 'lr': 0.001, 'seed': 0, 'hidden_dim': 128, 'output_dir': 'runs/mtl_aqa_minimal'}
 epoch=001 train_loss=4538.282520 train_spearman=-0.1883524086898955 train_mse=4430.236113 test_spearman=-0.1603001457932084 test_mse=4276.943419
 epoch=002 train_loss=4334.351559 train_spearman=-0.1361351032424866 train_mse=4235.550547 test_spearman=-0.10905548787787224 test_mse=4087.447646
 epoch=003 train_loss=4150.859607 train_spearman=-0.10064248258808545 train_mse=4038.530472 test_spearman=-0.07550422476583676 test_mse=3895.581411

@@ -9,7 +9,7 @@ from typing import Dict
 
 import numpy as np
 
-from dataset import MTLAQADataset, standardize_train_test, write_predictions
+from dataset import MTLAQADataset, MTLAQASkeletonDataset, standardize_train_test, write_predictions
 from metrics import mse, safe_float, spearmanr
 from model import MLPConfig, NumpyMLPRegressor
 
@@ -17,6 +17,11 @@ from model import MLPConfig, NumpyMLPRegressor
 def parse_args():
     config = load_config("config.yaml")
     parser = argparse.ArgumentParser(description="Minimal MTL-AQA score regression baseline")
+    parser.add_argument(
+        "--input-type",
+        choices=["video_feature", "skeleton"],
+        default=config.get("input_type", "video_feature"),
+    )
     parser.add_argument("--data-root", default=config.get("data_root", "MTL-AQA_dataset_release/Ready_2_Use"))
     parser.add_argument(
         "--split-file",
@@ -28,6 +33,15 @@ def parse_args():
         "--feature-mode",
         choices=["auto", "feature", "annotation"],
         default=config.get("feature_mode", "auto"),
+    )
+    parser.add_argument("--skeleton-root", default=config.get("skeleton_root"))
+    parser.add_argument("--skeleton-length", type=int, default=int(config.get("skeleton_length", 103)))
+    parser.add_argument("--skeleton-dims", type=int, choices=[2, 3], default=int(config.get("skeleton_dims", 3)))
+    parser.add_argument(
+        "--model",
+        choices=["mlp", "temporal_mlp", "stgcn"],
+        default=config.get("model", "mlp"),
+        help="For skeleton input, temporal_mlp and stgcn select the skeleton encoder before the MLP regressor.",
     )
     parser.add_argument("--epochs", type=int, default=int(config.get("epochs", 20)))
     parser.add_argument("--batch-size", type=int, default=int(config.get("batch_size", 64)))
@@ -82,6 +96,25 @@ def evaluate(model: NumpyMLPRegressor, x: np.ndarray, y: np.ndarray):
     return preds, {"spearman": safe_float(rho), "spearman_p": safe_float(p_value), "mse": mse(preds, y)}
 
 
+def build_dataset(args, mode: str):
+    if args.input_type == "skeleton":
+        if not args.skeleton_root:
+            raise ValueError("--skeleton-root is required when --input-type skeleton")
+        skeleton_encoding = args.model
+        if skeleton_encoding == "mlp":
+            skeleton_encoding = "temporal_mlp"
+        return MTLAQASkeletonDataset(
+            args.data_root,
+            args.split_file,
+            mode,
+            args.skeleton_root,
+            skeleton_length=args.skeleton_length,
+            skeleton_dims=args.skeleton_dims,
+            skeleton_encoding=skeleton_encoding,
+        )
+    return MTLAQADataset(args.data_root, args.split_file, mode, args.feature_root, args.feature_mode)
+
+
 def main():
     args = parse_args()
     set_seed(args.seed)
@@ -98,12 +131,8 @@ def main():
         log.write(f"device: cpu-numpy\n")
         log.write(f"args: {vars(args)}\n")
 
-    train_data = MTLAQADataset(
-        args.data_root, args.split_file, "train", args.feature_root, args.feature_mode
-    )
-    test_data = MTLAQADataset(
-        args.data_root, args.split_file, "test", args.feature_root, args.feature_mode
-    )
+    train_data = build_dataset(args, "train")
+    test_data = build_dataset(args, "test")
     train_x, test_x, feature_mean, feature_std = standardize_train_test(train_data.x, test_data.x)
     train_y = train_data.y
     test_y = test_data.y
@@ -173,6 +202,8 @@ def save_checkpoint(path, model, args, feature_mean, feature_std, input_dim, met
         "feature_std": feature_std,
         "args": vars(args),
         "metrics": metrics,
+        "input_type": args.input_type,
+        "model": args.model,
     }
     with open(path, "wb") as handle:
         pickle.dump(state, handle)
