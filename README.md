@@ -1,3 +1,14 @@
+# Local Reproduction Notes
+
+This fork includes a minimal MTL-AQA score-regression baseline and skeleton-input replacement experiments in addition to the official release files.
+
+Local project documentation has been moved to [docs/](docs/):
+
+- [Project progress summary](docs/PROJECT_PROGRESS_SUMMARY.md)
+- [Supervisor report](docs/SUPERVISOR_REPORT.md)
+- [Architecture learning guide](docs/PROJECT_ARCHITECTURE_LEARNING_GUIDE.md)
+- [Skeleton baseline notes](docs/README_skeleton_baseline.md)
+
 ## 📢 Announcement: Workshop on Action Quality Assessment at ICCV 2025! 📢
 **April 2025** 📢 📢 📢 We will be organizing **Workshop** on [*Skilled Activity Understanding, Assessment and Feedback Generation* (SAUAFG)](https://sauafg-workshop.github.io/) at **ICCV 2025!** More info on [SAUAFG Website](https://sauafg-workshop.github.io/). **Consider submitting your papers!** See you in Honolulu, Hawaii!
 

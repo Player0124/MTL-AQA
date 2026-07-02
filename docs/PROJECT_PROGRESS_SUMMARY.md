@@ -19,15 +19,7 @@ F:\SkeletonRecognition\MTL-AQA
   train.py
   test.py
   README.md
-  README_reproduction.md
-  README_skeleton_baseline.md
-  reproduction_plan.md
-  results_skeleton_baseline.md
-  PROJECT_ARCHITECTURE_LEARNING_GUIDE.md
-  PROJECT_PROGRESS_SUMMARY.md
-  SUPERVISOR_REPORT.md
-  SUPERVISOR_BRIEF_REPORT.md
-  TODO_NEXT_STEPS.md
+  docs/
   MTL-AQA_code_release/
   MTL-AQA_dataset_release/
   runs/
@@ -51,8 +43,12 @@ F:\SkeletonRecognition\MTL-AQA
 | `train.py` | 训练入口 | 核心实现 |
 | `test.py` | checkpoint 复评估入口 | 核心实现 |
 | `config.yaml` | 默认配置 | 存在 |
-| `README_reproduction.md` | MTL-AQA 最小复现说明 | 存在 |
-| `README_skeleton_baseline.md` | skeleton baseline 说明 | 存在 |
+| `docs/README.md` | 文档索引 | 存在 |
+| `docs/README_reproduction.md` | MTL-AQA 最小复现说明 | 存在 |
+| `docs/README_skeleton_baseline.md` | skeleton baseline 说明 | 存在 |
+| `docs/PROJECT_PROGRESS_SUMMARY.md` | 当前项目审计与进度总结 | 存在 |
+| `docs/SUPERVISOR_REPORT.md` | 导师汇报稿 | 存在 |
+| `docs/TODO_NEXT_STEPS.md` | 下一步计划 | 存在 |
 | `runs/` | 实验日志、metrics、predictions、checkpoints | 存在 |
 | `.gitignore` | 忽略 pycache、get-pip、synthetic smoke 数据 | 存在 |
 
