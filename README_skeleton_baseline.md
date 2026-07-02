@@ -105,7 +105,7 @@ Current comparable video-feature baseline from the previous phase:
 
 ## Smoke-Test Result
 
-The repository currently does not include real skeleton `.npy` files. To verify the new data/model paths, a synthetic skeleton directory was generated under `runs/synthetic_skeleton_smoke`. These numbers only validate the code path and are not real skeleton AQA results.
+The repository currently does not include real skeleton `.npy` files. A synthetic skeleton directory was previously generated only to verify the new data/model paths; the raw synthetic `.npy` files have been cleaned from the project, while the smoke-test logs/metrics are retained. These numbers only validate the code path and are not real skeleton AQA results.
 
 | Input | Model | Spearman | MSE | Notes |
 | --- | --- | ---: | ---: | --- |
@@ -115,15 +115,15 @@ The repository currently does not include real skeleton `.npy` files. To verify 
 ## Reproducible Smoke Commands
 
 ```powershell
-& 'C:\Users\User\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe' train.py --input-type skeleton --skeleton-root runs\synthetic_skeleton_smoke --model temporal_mlp --epochs 2 --batch-size 128 --output-dir runs\skeleton_temporal_mlp_smoke
+& "C:\Users\User\AppData\Local\Programs\Python\Python38\python.exe" train.py --input-type skeleton --skeleton-root <skeleton_root> --model temporal_mlp --epochs 2 --batch-size 128 --output-dir runs\skeleton_temporal_mlp_smoke
 ```
 
 ```powershell
-& 'C:\Users\User\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe' train.py --input-type skeleton --skeleton-root runs\synthetic_skeleton_smoke --model stgcn --epochs 2 --batch-size 128 --output-dir runs\skeleton_stgcn_smoke
+& "C:\Users\User\AppData\Local\Programs\Python\Python38\python.exe" train.py --input-type skeleton --skeleton-root <skeleton_root> --model stgcn --epochs 2 --batch-size 128 --output-dir runs\skeleton_stgcn_smoke
 ```
 
 ```powershell
-& 'C:\Users\User\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe' test.py --checkpoint runs\skeleton_stgcn_smoke\checkpoints\best_model.pt
+& "C:\Users\User\AppData\Local\Programs\Python\Python38\python.exe" test.py --checkpoint runs\skeleton_stgcn_smoke\checkpoints\best_model.pt
 ```
 
 ## Next Step

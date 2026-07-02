@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+*$py.class
+
+.idea/
+
+get-pip.py
+
+# Synthetic/generated smoke-test input data. Keep metrics/logs/checkpoints separately.
+runs/synthetic_skeleton_smoke/
